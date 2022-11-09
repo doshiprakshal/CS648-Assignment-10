@@ -7,16 +7,21 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="js/jquery.mobilemenu.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
+
+			$( "input" ).checkboxradio();
+
+			$( "#companysize" ).selectmenu();
+
+			$( ".widget input[type=submit]" ).button();
 		});
 	</script>
 </head>
@@ -28,11 +33,11 @@
 		
 		<nav class="thirteen columns">
 			<ul id="responsive-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutus.html">About Us</a></li>
-				<li><a href="solutions.html">Solutions</a></li>
-				<li><a href="support.html">Support</a></li>
-				<li><a href="contactus.html">Contact Us</a></li>
+				<li><a href="index.html" title="Welcome to Vecta Corps.">Home</a></li>
+				<li><a href="aboutus.html" title="Know our values, team and job openings.">About Us</a></li>
+				<li><a href="solutions.html" title="Vecta Corp. offers 3 solutions for prospecting, converting, and retaining customers.">Solutions</a></li>
+				<li><a href="support.html" title="Get your queries answered by our expert communities.">Support</a></li>
+				<li><a href="contactus.html" title="Leave a message here to hear back from us.">Contact Us</a></li>
 			</ul>
 		</nav>
 		
@@ -55,26 +60,32 @@
 			    Email:
 				<input type="email" name="email" maxlength="30" required="">
 			   
-                What VectaCorp products are you interested in?<br>
+				<fieldset>
+				<legend>What VectaCorp products are you interested in?</legend>
 			    <label for="vProspect"><input type="checkbox" name="product" value="vProspect" id="vProspect">vProspect 2.0</label>
 			    <label for="vConvert"><input type="checkbox" name="product" value="vConvert" id="vConvert">vConvert 2.0</label>
 			    <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain">vRetain 1.0</label>
-			    
-			    <br>
-			    What is your current infrastructure?<br>
+				</fieldset>
+
+				<br>
+				<fieldset>
+			    <legend>What is your current infrastructure?</legend>
 			    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
 			    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
 			    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
 			    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
-
-			    <br>
-			    How many employees do you have?
-			    <select name="companysize">
+				</fieldset>	
+	
+				<br>
+				<fieldset>
+			    <label for="companysize">How many employees do you have?</label>
+			    <select name="companysize" id="companysize">
                     <option value="1-10">1-10</option>
                     <option value="11-100">11-100</option>
                     <option value="101-1000">101-1000</option>
                     <option value="More than 1000">More than 1000</option>
-		        </select>
+				</select>
+				</fieldset>
                 
 			    How did you hear about us?
 			    <select name="hearaboutus" multiple="" size="5">
@@ -87,7 +98,7 @@
                 
 			    Questions or comments for our sales representatives?
 			    <textarea name="questions" size="30" rows="5"></textarea>
-			    <input type="submit" name="submit" value="Submit Now">
+				<input type="submit" name="submit" value="Submit Now">
 		    	</fieldset>
 			</form>
 	    </section>
